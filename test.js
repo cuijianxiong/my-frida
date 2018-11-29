@@ -1,11 +1,24 @@
 Java.perform(function() {                
 
-    var test1 = Java.use("java.util.HashMap");
+    var array_list = Java.use("java.util.ArrayList");
     var ApiClient = Java.use('com.android.org.conscrypt.TrustManagerImpl');
-
-	test1.implementation = function(arg1,arg2){
-		java.util.HashMap(arg1,arg2);
+	
+	var util5 = Java.use("com.androidplus.util.Md5Util");
+	
+	util5.md5.implementation = function(arg1){
+		console.log("md5");
 		console.log(arg1);
-		console.log(arg2);
+		return;
 	}
+	
+    ApiClient.checkTrustedRecursive.implementation = function(a1,a2,a3,a4,a5,a6) {
+            console.log('Bypassing SSL Pinning');
+            var k = array_list.$new(); 
+            return k;
+    }
+
+	
 },0);
+
+
+

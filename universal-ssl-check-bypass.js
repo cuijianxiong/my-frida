@@ -8,8 +8,4 @@ Java.perform(function() {
             var k = array_list.$new(); 
             return k;
     }
-	
-	var hash = Java.use("java.util.HashMap");
-	var prin = Java.use("com.androidplus.util.LogUtils.d")
-
 },0);
